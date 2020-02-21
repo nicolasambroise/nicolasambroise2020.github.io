@@ -67,7 +67,7 @@
 }
 */
 body {
-    background-color: #e1d7bc33;
+    background-color: #f9f7f1;
     font-family: 'Poppins', sans-serif;
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;
@@ -101,6 +101,7 @@ p{
     padding: 10em 0 20em 0;
     position: relative;
     text-align: center;
+    width:100%;
 }
 
 #header h1{
@@ -130,7 +131,24 @@ p{
 #header {
     padding: 8em 0 16em 0;
 }
+#header .divider-wrap{
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 150px;
+  z-index: 3;
+  transform: translateZ(0);
+}
 
+#header .divider{
+  width: 100%;
+  left: 0;
+  bottom: -1px;
+  height: 100%;
+  position: absolute;}
 
 
 	.icon-scroll{
@@ -217,27 +235,20 @@ p{
     left: calc(50% - 50px);
 }
 
-.bg-primary h2{
+.bg-primary h2,
+.bg-dark h2{
   color: #ffffff !important;
 }
 
-.bg-primary h2:before{
+.bg-primary h2:before,
+.bg-dark h2:before{
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-.bg-primary h2:after{
+.bg-primary h2:after,
+.bg-dark h2:after{
   background-color: rgba(255, 255, 255, 0.6);
 }
-
-.bg-dark {
-    background-color: #403341;
-}
-
-.bg-dark strong{
-  font-size: 20px;
-}
-
-
 
 
 #about .service-box{height: 300px;}
@@ -544,6 +555,8 @@ label {
 		text-decoration: none;
 		width: 100%;
 		opacity: 1;
+    margin:5px;
+    color: #ffffff;
 	}
 
 		input[type="text"]:focus,
@@ -611,30 +624,14 @@ label {
 	}
 
 
-
-#footer {
-    background-attachment: scroll;
-    background-image: url(../img/design/bottom-3200.svg);
-    background-position: top center;
-    background-repeat: repeat-x;
-    background-size: 3200px 460px;
-    color: rgba(255, 255, 255, 0.8);
-    padding: calc(460px + 6em) 0 10em 0;
-    position: relative;
-    text-align: center;
-}
-
-@media screen and (max-width: 1280px)
-#footer {
-    background-image: url(../img/design/bottom-1600.svg);
-    background-size: 1600px 230px;
-    margin-top: -100px;
-    padding: calc(230px + 4em) 0 6em 0;
-}
-@media screen and (max-width: 736px)
-#footer {
-    background-image: url(../img/design/bottom-1280.svg);
-    background-size: 1280px 184px;
-    margin-top: -75px;
-    padding: calc(184px + 2em) 0 2em 0;
+.copyright{
+  background-color:#F05F40;
+  color: #fff;
+  width:100%;
+  text-align:center;
+  font-size:12px;
+  padding: 2px 15px;
+  letter-spacing: .2px;
+  border-top: 1px solid #555;
+  border-color: rgba(255,255,255,.15);
 }
