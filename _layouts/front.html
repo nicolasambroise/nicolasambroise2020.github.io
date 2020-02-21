@@ -6,14 +6,20 @@
 <body id="page-top">
   {% include nav.html %}
   {% include header.html %}
-  {% include intro.html %}
-  {% include services.html %}
-  {% include competences.html %}
+  {% include about.html %}
+
+  <div style="min-height: 50px;background-image: linear-gradient(to right top, #F05F40 48%,hsla(0, 0%, 100%, 0) 50%);"></div>
+  <div style="background-color:#F05F40;">
+    {% include competences.html %}
+  </div>
+  <div style="min-height: 50px;background-image: linear-gradient(to right top,hsla(0, 0%, 100%, 0) 48%,#F05F40 50%);"></div>
+
+
+  {% include timeline.html %}
+
+  {% include articles.html %}
   {% include project.html %}
   {% include portfolio.html %}
-  {% include timeline.html %}
-  {% include aside.html %}
-  {% include articles.html %}
   {% include contact.html %}
   {% include form.html %}
   {% include scripts.html %}
