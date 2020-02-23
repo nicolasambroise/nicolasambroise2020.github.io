@@ -85,13 +85,6 @@ p{
 }
 
 #header {
-  /*
-    background-attachment: scroll,scroll,fixed;
-    background-image: url(../img/design/top-3200.svg), url(../img/design/overlay.png), url(../img/header.jpg);
-    background-position: bottom center,top left,center center;
-    background-repeat: repeat-x,repeat,no-repeat;
-    background-size: 3200px 460px,auto,cover;
-    */
     background-attachment: scroll,fixed;
     background-image: url(../img/design/overlay.png), url(../img/header.jpg);
     background-position: top left,center center;
@@ -102,6 +95,7 @@ p{
     position: relative;
     text-align: center;
     width:100%;
+    height: calc(100% + 50px);
 }
 
 #header h1{
@@ -114,23 +108,19 @@ p{
             font-size: 65px;
 }
 
-@media screen and (max-width: 736px)
+@media screen and (max-width: 767px)
 #header {
-    /*background-image: url(../img/design/top-1280.svg), url(../img/design/overlay.png), url(../img/header.jpg);
-    background-size: 1280px 184px, auto, cover;*/
     padding: 3em 0 7em 0;
 }
 @media screen and (max-width: 1280px)
 #header {
-    /*background-attachment: scroll,scroll,scroll;
-    background-image: url(../img/design/top-1600.svg), url(../img/design/overlay.png), url(../img/header.jpg);
-    background-size: 1600px 230px,auto,cover;*/
     padding: 6em 0 12em 0;
 }
 @media screen and (max-width: 1680px)
 #header {
     padding: 8em 0 16em 0;
 }
+
 #header .divider-wrap{
   position: absolute;
   top: auto;
@@ -208,7 +198,7 @@ p{
 .container h2{
   position: relative;
   padding-bottom: 20px;
-  margin-bottom: 0;
+  margin-bottom: 50px;
   font-size: 50px;
   line-height: 55px;
   color: #232323;
@@ -250,6 +240,15 @@ p{
   background-color: rgba(255, 255, 255, 0.6);
 }
 
+#avatar{display: block;
+    position: relative;
+    margin: 0 auto;}
+
+#avatar img{
+    border-radius: 50%;
+    background-color: #e7bd9b;
+    box-shadow: 1px 1px 3px #333;
+}
 
 #about .service-box{height: 300px;}
 #about .service-box  .circle {
@@ -404,7 +403,7 @@ p{
     width: 100%;
     margin: auto;
     position: absolute;
-    top: 27%;
+    top: 25%;
     left: 0
 }
 
@@ -431,7 +430,7 @@ p{
     font-size: 19px;
     font-weight: 700;
     line-height: 24px;
-    margin: 0 0 15px 0
+    margin: 0 0 15px 10px;
 }
 
 .main-timeline .description {
@@ -501,7 +500,7 @@ p{
         height: 110px
     }
     .main-timeline .date {
-        top: 30%
+        top: 20%
     }
     .main-timeline .year {
         font-size: 24px
@@ -516,6 +515,8 @@ p{
         margin-bottom: 10px
     }
 }
+
+#timeline strong{font-size: 18px;}
 
 
 /* Form */
@@ -634,4 +635,28 @@ label {
   letter-spacing: .2px;
   border-top: 1px solid #555;
   border-color: rgba(255,255,255,.15);
+}
+
+@media only screen and (max-width: 767px) {
+  header .header-content {
+    padding: 0 15px;
+    }
+
+  .container .borderbox{
+        box-shadow: none;
+        padding: 10px;
+        background-color: unset;
+  }
+  #competences .borderbox{
+    color:#000;
+  }
+  .container h2 {
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    font-size: 30px;
+  }
+
+  #competences .borderbox h3 {
+    font-size: 22px;
+  }
 }
