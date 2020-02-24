@@ -17,6 +17,18 @@ p{
   word-spacing: 1px;
 }
 
+text-muted {
+    color: #737373;
+}
+
+a{
+  color: #DE3712;
+}
+
+a:hover{
+  color:#F05F40;
+}
+
 #header {
     background-attachment: scroll,fixed;
     background-image: url(../img/design/overlay.png), url(../img/header.jpg);
@@ -185,7 +197,7 @@ p{
 
 #about .service-box{height: 300px;}
 #about .service-box  .circle {
-    background-color: #F05F40;
+    background-color: #DE3712;
     padding: 20px;
     display: block;
     border-radius: 50%;
@@ -255,7 +267,7 @@ p{
 
 .main-timeline .icon:before {
     background: #fff;
-    border: 2px solid #f05f40;
+    border: 2px solid #DE3712;
     left: -3px
 }
 
@@ -316,7 +328,7 @@ p{
 
 .main-timeline .date-outer:before {
     background: #fff;
-    border: 2px solid #f05f40;
+    border: 2px solid #DE3712;
     left: -6px
 }
 
@@ -558,12 +570,19 @@ label {
 		opacity: 0.5;
 	}
 
-#my-form-button{background-color: #f05f40;padding: 5px 10px;color: white;visibility: visible;animation-name: tada;}
-#my-form-button:hover{background-color: #eb3812;}
+#my-form-button{background-color: #DE3712;padding: 5px 10px;color: white;visibility: visible;animation-name: tada;}
+#my-form-button:hover{background-color: #f05f40;}
 
+#contact a{
+  color: #FFFFFF;
+}
+
+#contact a:hover{
+  color:#F05F40;
+}
 
 .copyright{
-  background-color:#F05F40;
+  background-color:#DE3712;
   color: #fff;
   width:100%;
   text-align:center;
