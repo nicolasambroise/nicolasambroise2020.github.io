@@ -15,10 +15,22 @@
                   </div>
                   <div class="col-md-6">
                     <div>
-                      <img alt="Drupal Logo" src="/img/illustration/drupal_logo_min.png" style="width:100%;max-width:350px;margin:0 auto 20px auto;">
+                      <picture>
+                        <source srcset="/img/illustration/drupal_logo_min.webp" type="image/webp">
+                        <img alt="Drupal Logo" src="/img/illustration/drupal_logo_min.png" style="width:100%;max-width:350px;margin:0 auto 20px auto;">
+                     </picture>
                     </div>
                   </div>
               </div>
+
+
+                <div class="row" style="margin-top:50px;">
+                      {% include articles.html %}
+                </div>
+                <div class="row" style="margin-top:50px;">
+                        {% include articles_list.html %}
+                </div>
+
         </div>
     </div>
 </section>
