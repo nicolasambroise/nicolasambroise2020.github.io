@@ -1,5 +1,6 @@
 $(document).ready(function(){
-  /* blob */
+
+  		/* blob */
 			function generateBlob(feature) {
 			  const percentage1 = Math.floor(Math.random()*50)+25;
 			  const percentage2 = Math.floor(Math.random()*50)+25;
@@ -19,4 +20,20 @@ $(document).ready(function(){
 			generateBlob(".feature4");
 			generateBlob(".feature5");
 			generateBlob(".feature6");
+
+			/* Services Worker */
+			if ("serviceWorker" in navigator) {
+			  if (navigator.serviceWorker.controller) {
+			    console.log("An active service worker found, no need to register");
+			  } else {
+			    // Register the service worker
+			    navigator.serviceWorker
+			      .register("/serviceworker.js", {
+			        scope: "./"
+			      })
+			      .then(function (reg) {
+			        console.log("Service worker has been registered for scope: " + reg.scope);
+			      });
+			  }
+			}
   });

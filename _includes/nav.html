@@ -14,6 +14,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
+               {% if page.url == "/" %}
                 <li>
                     <a class="page-scroll" href="#about">A propos</a>
                 </li>
@@ -29,13 +30,20 @@
                 <li>
                     <a class="page-scroll" href="#project">Projets</a>
                 </li>
-                <!--<li>
-                    <a class="page-scroll" href="#blog">Blog</a>
-                </li>
-                -->
                 <li>
                     <a class="page-scroll" href="#contact">Contact</a>
                 </li>
+                {% else %}
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li {% if page.url == "/blog.html" %}class="active"{% endif %}>
+                    <a href="/blog.html">Blog</a>
+                </li>
+                <li  {% if page.url == "/contact.html" %}class="active"{% endif %}>
+                    <a href="/contact.html">Contact</a>
+                </li>
+                {% endif %}
             </ul>
         </div>
         <!-- /.navbar-collapse -->

@@ -6,6 +6,7 @@
 <body id="page-post">
   {% include nav.html %}
   <h1>{{ post.title }}</h1>
+  <p>{{ page.date | date_to_string }} - {{ page.author }}</p>
   <section>
       {{ content }}
   </section>

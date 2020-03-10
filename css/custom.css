@@ -573,6 +573,9 @@ label {
 #my-form-button{background-color: #DE3712;padding: 5px 10px;color: white;visibility: visible;animation-name: tada;}
 #my-form-button:hover{background-color: #f05f40;}
 
+#blog .btn{background-color: #DE3712;padding: 5px 10px;color: white;}
+#blog .btn:hover{background-color: #f05f40;}
+
 #contact a{
   color: #FFFFFF;
 }
