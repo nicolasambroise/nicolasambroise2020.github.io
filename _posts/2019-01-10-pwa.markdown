@@ -4,6 +4,7 @@ title:  "PWA & lighthouse 100% - Page Simple"
 date:   2010-01-10 21:16:07 +0100
 categories: pwa
 thumbnail: "phare.jpg"
+visible : false
 ---
 
 Bonjour,

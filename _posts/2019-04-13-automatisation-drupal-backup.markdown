@@ -4,6 +4,7 @@ title: "Drupal REST services"
 date:   2019-04-13 00:16:07 +0100
 categories: drupal
 thumbnail: "backup.jpg"
+visible : false
 ---
 Backup Drupal
 Le Backup Auto est très pratique pour les sites Drupal, si un problème survient ou si une mise à jour se passe mal, on peut restaurer son site à une version antérieur.

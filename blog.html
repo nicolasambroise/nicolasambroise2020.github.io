@@ -12,6 +12,7 @@ title: Blog
         </div>
         <div>
             {% for post in site.posts %}
+              {% if post.visible == true  %}
               <article class="row" style="padding:20px 0;">
                   <div class="col-md-2 col-md-offset-2 text-center">
                       <img src="/img/thumbnail/{{ post.thumbnail }}" style="width:100%;max-width:500px;">
@@ -25,6 +26,7 @@ title: Blog
                     {% endif %}
                   </div>
               </article>
+              {% endif %}
             {% endfor %}
         </div>
     </div>
