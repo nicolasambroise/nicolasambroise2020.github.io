@@ -5,7 +5,7 @@
 	"background_color": "#433440",
 	"display": "standalone",
 	"scope": "/",
-	"start_url": "/",
+	"start_url": "https://nicolasambroise.com/",
 	"lang": "fr-FR",
 	"orientation": "any",
   "icons": [

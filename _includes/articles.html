@@ -1,14 +1,24 @@
 
           <div class="col-md-12"><hr><h2>Articles</h2></div>
-          <div class="col-md-8">
+          <div class="col-md-9">
             {% for post in site.posts limit:1 %}
-              <img src="/img/thumbnail/{{ post.thumbnail }}">
+              {% if post.visible == true %}
+              <img src="/img/thumbnail/{{ post.thumbnail }}" style="width:100%"><br>
               <a href="{{ post.url }}">{{ post.title }}</a>
+              {% endif %}
             {% endfor %}
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3">
             {% for post in site.posts offset:1 limit:3 %}
-              <img src="/img/thumbnail/{{ post.thumbnail }}">
-              <a href="{{ post.url }}">{{ post.title }}</a>
+              {% if post.visible == true %}
+              <img src="/img/thumbnail/{{ post.thumbnail }}" style="width:100%"><br>
+              <a href="{{ post.url }}">{{ post.title }}</a><br>
+              {% endif %}
             {% endfor %}
+          </div>
+          <div class="col-md-12">
+              <strong style="margin-right:10px;">Voir mes autres articles</strong>
+              <a href="/blog.html" aria-label="Mon Blog"
+              class="btn btn-default btn-xl wow tada text-faded" style="background-color:#F05F40;font-size: 20px;
+              padding: 5px 10px;color: white;"><i class="fas fa-arrow-right"></i></a>
           </div>
