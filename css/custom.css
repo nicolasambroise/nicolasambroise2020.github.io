@@ -1,11 +1,37 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/Montserrat-Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/Montserrat-Regular.otf") format("opentype"), /* Open Type Font */
+    url("../fonts/Montserrat-Regular.svg") format("svg"), /* Legacy iOS */
+    url("../fonts/Montserrat-Regular.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("../fonts/Montserrat-Regular.woff") format("woff"), /* Modern Browsers */
+    url("../fonts/Montserrat-Regular.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Bold.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/Montserrat-Bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/Montserrat-Bold.otf") format("opentype"), /* Open Type Font */
+    url("../fonts/Montserrat-Bold.svg") format("svg"), /* Legacy iOS */
+    url("../fonts/Montserrat-Bold.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("../fonts/Montserrat-Bold.woff") format("woff"), /* Modern Browsers */
+    url("../fonts/Montserrat-Bold.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: 600;
+  font-style: normal;
+}
+
 
 body {
     background-color: #f9f7f1;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;
     font-size: 14px;
-    color: #6f6f6f;
+    color: #545454;
     font-weight: 400;
     line-height: 24px;
     margin: 0;
@@ -17,10 +43,6 @@ p{
   word-spacing: 1px;
 }
 
-.text-muted {
-    color: #737373;
-}
-
 a{
   color: #DE3712;
 }
@@ -29,18 +51,30 @@ a:hover{
   color:#F05F40;
 }
 
-#header {
+#header{
+  color: rgba(255, 255, 255, 0.8);
+  padding: 10em 0 20em 0;
+  position: relative;
+  text-align: center;
+  width:100%;
+  height: calc(100% + 50px);
+}
+
+.no-js #header,
+.no-webp #header {
     background-attachment: scroll,fixed;
-    background-image: url(../img/design/overlay.png), url(../img/header.jpg);
+    background-image: url(../img/design/overlay.png), url(../img/design/laptop.jpg);
     background-position: top left,center center;
     background-repeat: repeat,no-repeat;
     background-size: auto,cover;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 10em 0 20em 0;
-    position: relative;
-    text-align: center;
-    width:100%;
-    height: calc(100% + 50px);
+}
+
+.webp #header {
+    background-attachment: scroll,fixed;
+    background-image: url(../img/design/overlay.webp), url(../img/design/laptop.webp);
+    background-position: top left,center center;
+    background-repeat: repeat,no-repeat;
+    background-size: auto,cover;
 }
 
 #header h1{
@@ -353,15 +387,10 @@ a:hover{
     left: 0
 }
 
-.main-timeline .month {
-    font-size: 18px;
-    font-weight: 700
-}
-
 .main-timeline .year {
     display: block;
     font-size: 30px;
-    font-weight: 700;
+    font-weight: 600;
     color: #232323;
     line-height: 36px
 }
@@ -469,9 +498,9 @@ a:hover{
 
 label {
 		display: block;
-		color: #5b5b5b;
+		color: #cccccc;
 		font-size: 0.8em;
-		font-weight: 700;
+		font-weight: 600;
 		letter-spacing: 0.125em;
 		line-height: 1.75em;
 		text-transform: uppercase;
@@ -479,9 +508,7 @@ label {
 	}
 
 	input[type="text"],
-	input[type="password"],
 	input[type="email"],
-	select,
 	textarea {
 		-moz-appearance: none;
 		-webkit-appearance: none;
@@ -507,42 +534,16 @@ label {
 	}
 
 		input[type="text"]:focus,
-		input[type="password"]:focus,
 		input[type="email"]:focus,
-		select:focus,
 		textarea:focus {
 			background: rgba(224, 224, 224, 0.15);
 			border-color: #4eb980;
 		}
 
 	input[type="text"],
-	input[type="password"],
-	input[type="email"],
-	select {
+	input[type="email"] {
 		line-height: 1em;
 	}
-
-	select {
-		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(224, 224, 224, 0.75)' /%3E%3C/svg%3E");
-		background-size: 1.25em;
-		background-repeat: no-repeat;
-		background-position: calc(100% - 1em) center;
-		padding-right: 1.5em;
-		text-overflow: ellipsis;
-	}
-
-		select option {
-			color: #5b5b5b;
-			background: #ffffff;
-		}
-
-		select:focus::-ms-value {
-			background-color: transparent;
-		}
-
-		select::-ms-expand {
-			display: none;
-		}
 
 	textarea {
 		padding: 0.5em 0.75em;
@@ -570,9 +571,6 @@ label {
 		opacity: 0.5;
 	}
 
-#my-form-button{background-color: #DE3712;padding: 5px 10px;color: white;visibility: visible;animation-name: tada;}
-#my-form-button:hover{background-color: #f05f40;}
-
 #blog .btn{background-color: #DE3712;padding: 5px 10px;color: white;}
 #blog .btn:hover{background-color: #f05f40;}
 
@@ -583,6 +581,15 @@ label {
 #contact a:hover{
   color:#F05F40;
 }
+
+#contact button{background-color: #DE3712;padding: 5px 10px;color: white;visibility: visible;animation-name: tada;}
+#contact button:disabled,
+#contact button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+#contact button:hover{background-color: #f05f40;}
 
 .copyright{
   background-color:#DE3712;
@@ -606,6 +613,7 @@ label {
         padding: 10px;
         background-color: unset;
   }
+  #certif .borderbox,
   #competences .borderbox{
     color:#000;
   }
@@ -614,7 +622,7 @@ label {
     margin-bottom: 30px;
     font-size: 30px;
   }
-
+  #certif .borderbox h3,
   #competences .borderbox h3 {
     font-size: 22px;
   }

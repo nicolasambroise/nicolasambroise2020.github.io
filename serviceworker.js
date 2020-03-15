@@ -13,17 +13,12 @@ var preLoad = function(){
 
     return cache.addAll([
         '/',
-        '/js/jquery.js',
-        '/js/bootstrap.min.js',
-        '/js/jquery.easing.min.js',
-        '/js/jquery.fittext.js',
-        '/js/wow.min.js',
-        '/js/custom.js',
-        '/js/creative.js',
+        '/js/custom.min.js',
         '/js/manup.min.js',
-        '/js/sw_controller.js',
-        '/css/critical.css',
-        '/css/custom.css',
+        '/js/modernizr.min.js',
+        '/js/sw.min.js',
+        '/css/critical.min.css',
+        '/css/custom.min.css',
         '/css/main.css',
 
         '/img/avatar/AmbroiseNicolas2020Square100.png',
@@ -37,23 +32,21 @@ var preLoad = function(){
         '/img/avatar/AmbroiseNicolas2020Square500.png',
         '/img/avatar/AmbroiseNicolas2020Square500.webp',
 
-        '/img/design/header.jpg',
+        '/img/design/laptop.jpg',
+        '/img/design/laptop.webp',
         '/img/design/overlay.png',
+        '/img/design/overlay.webp',
         '/img/favicon/favicon-32x32.png',
         '/img/favicon/favicon-16x16.png',
         '/img/favicon/favicon-96x96.png',
         '/img/favicon/android-icon-192x192.png',
 
-        '/fonts/fa-brands-400.woff2',
-        '/fonts/fa-brands-400.woff',
-        '/fonts/fa-brands-400.ttf',
-
-        '/fonts/fa-solid-900.woff2',
-        '/fonts/fa-solid-900.woff',
-        '/fonts/fa-solid-900.ttf',
-
-        //'/manifest.json'
-
+        '/fontawesome/webfonts/fa-brands-400.woff2',
+        '/fontawesome/webfonts/fa-brands-400.woff',
+        '/fontawesome/webfonts/fa-brands-400.ttf',
+        '/fontawesome/webfonts/fa-solid-900.woff2',
+        '/fontawesome/webfonts/fa-solid-900.woff',
+        '/fontawesome/webfonts/fa-solid-900.ttf'
       ]);
   });
 };

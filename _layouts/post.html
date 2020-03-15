@@ -5,10 +5,18 @@
 
 <body id="page-post">
   {% include nav.html %}
-  <h1>{{ post.title }}</h1>
-  <p>{{ page.date | date_to_string }} - {{ page.author }}</p>
+
+
   <section>
-      {{ content }}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 text-center borderbox">
+                <h1>{{ post.title }}</h1>
+                <p>{{ page.date | date_to_string }} - {{ page.author }}</p>
+								{{ content }}
+            </div>
+          </div>
+        </div>
   </section>
   {% include copyright.html %}
   {% include scripts.html %}
