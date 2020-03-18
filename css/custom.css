@@ -11,19 +11,8 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/Montserrat-Bold.eot"); /* IE9 Compat Modes */
-  src: url("../fonts/Montserrat-Bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-    url("../fonts/Montserrat-Bold.otf") format("opentype"), /* Open Type Font */
-    url("../fonts/Montserrat-Bold.svg") format("svg"), /* Legacy iOS */
-    url("../fonts/Montserrat-Bold.ttf") format("truetype"), /* Safari, Android, iOS */
-    url("../fonts/Montserrat-Bold.woff") format("woff"), /* Modern Browsers */
-    url("../fonts/Montserrat-Bold.woff2") format("woff2"); /* Modern Browsers */
-  font-weight: 600;
-  font-style: normal;
-}
-
+@font-face{font-family:"Font Awesome 5 Brands";font-style:normal;font-weight:400;font-display:auto;src:url(../fontawesome/webfonts/fa-brands-400.eot);src:url(../fontawesome/webfonts/fa-brands-400.eot?#iefix) format("embedded-opentype"),url(../fontawesome/webfonts/fa-brands-400.woff2) format("woff2"),url(../fontawesome/webfonts/fa-brands-400.woff) format("woff"),url(../fontawesome/webfonts/fa-brands-400.ttf) format("truetype"),url(../fontawesome/webfonts/fa-brands-400.svg#fontawesome) format("svg");font-display: fallback;}.fab{font-family:"Font Awesome 5 Brands";font-weight:400}
+@font-face{font-family:"Font Awesome 5 Free";font-style:normal;font-weight:900;font-display:auto;src:url(../fontawesome/webfonts/fa-solid-900.eot);src:url(../fontawesome/webfonts/fa-solid-900.eot?#iefix) format("embedded-opentype"),url(../fontawesome/webfonts/fa-solid-900.woff2) format("woff2"),url(../fontawesome/webfonts/fa-solid-900.woff) format("woff"),url(../fontawesome/webfonts/fa-solid-900.ttf) format("truetype"),url(../fontawesome/webfonts/fa-solid-900.svg#fontawesome) format("svg");font-display: fallback;}.fa,.fas{font-family:"Font Awesome 5 Free";font-weight:900}
 
 body {
     background-color: #f9f7f1;
@@ -218,6 +207,8 @@ a:hover{
 .bg-dark h2:after{
   background-color: rgba(255, 255, 255, 0.6);
 }
+
+img{max-width: 100%}
 
 #avatar{display: block;
     position: relative;
@@ -626,6 +617,87 @@ label {
   #competences .borderbox h3 {
     font-size: 22px;
   }
+}
+
+.fa,.fab,.fad,.fal,.far,.fas {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1
+}
+
+.fa-3x {
+    font-size: 3em
+}
+
+.fa-4x {
+    font-size: 4em
+}
+
+.fa-bluetooth-b:before {
+    content: "\f294"
+}
+
+.fa-facebook-square:before {
+    content: "\f082"
+}
+
+.fa-github-square:before {
+    content: "\f092"
+}
+
+.fa-globe:before {
+    content: "\f0ac"
+}
+
+.fa-home:before {
+    content: "\f015"
+}
+
+.fa-java:before {
+    content: "\f4e4"
+}
+
+.fa-linkedin:before {
+    content: "\f08c"
+}
+
+.fa-mobile-alt:before {
+    content: "\f3cd"
+}
+
+.fa-palette:before {
+    content: "\f53f"
+}
+
+.fa-puzzle-piece:before {
+    content: "\f12e"
+}
+
+.fa-searchengin:before {
+    content: "\f3eb"
+}
+
+.fa-users:before {
+    content: "\f0c0"
+}
+
+.fa-arrow-right:before {
+    content: "\f061";
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0
 }
 
 .animated {

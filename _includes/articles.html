@@ -3,7 +3,7 @@
           <div class="col-md-9">
             {% for post in site.posts limit:1 %}
               {% if post.visible == true %}
-              <img src="/img/thumbnail/{{ post.thumbnail }}" style="width:100%" alt="image {{ post.title }}"><br>
+              <img data-src="/img/thumbnail/{{ post.thumbnail }}" style="width:100%" alt="image {{ post.title }}" loading="lazy" class="lazyload"><br>
               <a href="{{ post.url }}" style="color:#000;">{{ post.title }}</a>
               {% endif %}
             {% endfor %}
@@ -11,7 +11,7 @@
           <div class="col-md-3">
             {% for post in site.posts offset:1 limit:3 %}
               {% if post.visible == true %}
-              <img src="/img/thumbnail/{{ post.thumbnail }}" style="width:100%" alt="image {{ post.title }}"><br>
+              <img data-src="/img/thumbnail/{{ post.thumbnail }}" style="width:100%" alt="image {{ post.title }}" loading="lazy" class="lazyload"><br>
               <a href="{{ post.url }}" style="color:#000;">{{ post.title }}</a><br>
               {% endif %}
             {% endfor %}

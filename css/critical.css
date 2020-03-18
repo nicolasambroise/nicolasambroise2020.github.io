@@ -184,7 +184,8 @@ ol,ul {
 }
 
 a {
-    background-color: transparent
+    background-color: transparent;
+    text-decoration: none;
 }
 
 a:active,a:hover {
@@ -228,17 +229,6 @@ button,input,select,textarea {
     font-size: inherit;
     line-height: inherit
 }
-
-a {
-    color: #337ab7;
-    text-decoration: none
-}
-
-a:focus,a:hover {
-    color: #23527c;
-    text-decoration: underline
-}
-
 
 img {
     vertical-align: middle
@@ -556,10 +546,6 @@ button,html input[type=button],input[type=reset],input[type=submit] {
     border-color: #e7e7e7
 }
 
-.navbar-default .navbar-brand {
-    color: #737373
-}
-
 .navbar-default .navbar-brand:focus,.navbar-default .navbar-brand:hover {
     color: #5e5e5e;
     background-color: transparent
@@ -611,86 +597,8 @@ button,html input[type=button],input[type=reset],input[type=submit] {
     clear: both
 }
 
-.fa,.fab,.fad,.fal,.far,.fas {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    line-height: 1
-}
 
-.fa-3x {
-    font-size: 3em
-}
 
-.fa-4x {
-    font-size: 4em
+#afterload{
+  display:none;
 }
-
-.fa-bluetooth-b:before {
-    content: "\f294"
-}
-
-.fa-facebook-square:before {
-    content: "\f082"
-}
-
-.fa-github-square:before {
-    content: "\f092"
-}
-
-.fa-globe:before {
-    content: "\f0ac"
-}
-
-.fa-home:before {
-    content: "\f015"
-}
-
-.fa-java:before {
-    content: "\f4e4"
-}
-
-.fa-linkedin:before {
-    content: "\f08c"
-}
-
-.fa-mobile-alt:before {
-    content: "\f3cd"
-}
-
-.fa-palette:before {
-    content: "\f53f"
-}
-
-.fa-puzzle-piece:before {
-    content: "\f12e"
-}
-
-.fa-searchengin:before {
-    content: "\f3eb"
-}
-
-.fa-users:before {
-    content: "\f0c0"
-}
-
-.fa-arrow-right:before {
-    content: "\f061";
-}
-
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    border: 0
-}
-
-@font-face{font-family:"Font Awesome 5 Brands";font-style:normal;font-weight:400;font-display:auto;src:url(../fontawesome/webfonts/fa-brands-400.eot);src:url(../fontawesome/webfonts/fa-brands-400.eot?#iefix) format("embedded-opentype"),url(../fontawesome/webfonts/fa-brands-400.woff2) format("woff2"),url(../fontawesome/webfonts/fa-brands-400.woff) format("woff"),url(../fontawesome/webfonts/fa-brands-400.ttf) format("truetype"),url(../fontawesome/webfonts/fa-brands-400.svg#fontawesome) format("svg");font-display: fallback;}.fab{font-family:"Font Awesome 5 Brands";font-weight:400}
-@font-face{font-family:"Font Awesome 5 Free";font-style:normal;font-weight:900;font-display:auto;src:url(../fontawesome/webfonts/fa-solid-900.eot);src:url(../fontawesome/webfonts/fa-solid-900.eot?#iefix) format("embedded-opentype"),url(../fontawesome/webfonts/fa-solid-900.woff2) format("woff2"),url(../fontawesome/webfonts/fa-solid-900.woff) format("woff"),url(../fontawesome/webfonts/fa-solid-900.ttf) format("truetype"),url(../fontawesome/webfonts/fa-solid-900.svg#fontawesome) format("svg");font-display: fallback;}.fa,.fas{font-family:"Font Awesome 5 Free";font-weight:900}

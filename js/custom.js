@@ -1,9 +1,19 @@
 document.addEventListener("DOMContentLoaded", function() {
+		let isFront = false;
+		function hasId(element){
+				return typeof element.id != 'undefined';
+		}
+		if( hasId(document.body) && document.body.id == 'page-front' ){isFront = true;}
+
+		/* Content After load */
+		if (isFront) {
+			const afterload = document.getElementById("afterload");
+			afterload.style.display = "block";
+		}
 
 		/* SpyScroll + Smooth Scroll */
 		const makeNavLinksSmooth = ( ) => {
-		const navLinks = document.querySelectorAll( '.page-scroll' );
-
+			const navLinks = document.querySelectorAll( '.page-scroll' );
 		  for ( let n in navLinks ) {
 		    if ( navLinks.hasOwnProperty( n ) ) {
 		      navLinks[ n ].addEventListener( 'click', e => {
@@ -12,14 +22,13 @@ document.addEventListener("DOMContentLoaded", function() {
 		          .scrollIntoView( {
 		            behavior: "smooth"
 		          } );
-		      } );
-		    }
-		  }
-		}
+			      });
+			    }
+			  }
+			}
 
 		const spyScrolling = ( ) => {
-		const sections = document.querySelectorAll( 'section' );
-
+			const sections = document.querySelectorAll( 'section' );
 		  window.onscroll = ( ) => {
 		    const scrollPos = document.documentElement.scrollTop || document.body.scrollTop;
 
@@ -29,19 +38,21 @@ document.addEventListener("DOMContentLoaded", function() {
 		        document.querySelector( '.active' ).classList.remove( 'active' );
 		        document.querySelector( `a[href*=${ id }]` ).parentNode.classList.add( 'active' );
 		      }
-		  }
-		}
+			  }
+			}
 
-		makeNavLinksSmooth( );
-		spyScrolling( );
+		if (isFront) {
+			makeNavLinksSmooth( );
+			spyScrolling( );
+		}
 
 		/* NavBar class OnScroll + Responsive */
 		let scrollpos = window.scrollY;
 	  const header = document.querySelector("nav#mainNav");
 	  const header_height = header.offsetHeight;
 
-	  const add_class_on_scroll = () => header.classList.add("affix");
-	  const remove_class_on_scroll = () => header.classList.remove("affix");
+	  const add_class_on_scroll = () => {header.classList.add("affix");header.classList.remove("affix-top");}
+	  const remove_class_on_scroll = () => {header.classList.remove("affix");header.classList.add("affix-top");}
 
 	  window.addEventListener('scroll', function() {
 	    scrollpos = window.scrollY;
@@ -66,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		})
 
   	/* blob */
+
 			function generateBlob(feature) {
 			  const percentage1 = Math.floor(Math.random()*50)+25;
 			  const percentage2 = Math.floor(Math.random()*50)+25;
@@ -80,19 +92,55 @@ document.addEventListener("DOMContentLoaded", function() {
 				document.getElementsByClassName(feature)[0].style.borderRadius = borderRadius;
 			}
 
-			generateBlob("feature1");
-			generateBlob("feature2");
-			generateBlob("feature3");
-			generateBlob("feature4");
-			generateBlob("feature5");
-			generateBlob("feature6");
-
+			if (isFront) {
+				generateBlob("feature1");
+				generateBlob("feature2");
+				generateBlob("feature3");
+				generateBlob("feature4");
+				generateBlob("feature5");
+				generateBlob("feature6");
+			}
 			/* Contact Form */
-			const math = document.getElementById("math");
-			const contactBtn = document.getElementById("contactBtn");
-			math.addEventListener('blur', (event) => {
-				 console.log(math.value);
-			   if(math.value == 42){contactBtn.disabled = false;}
-				 else{contactBtn.disabled = true;}
-			});
+			const loadEasyContactCaptcha = ( ) => {
+				const math = document.getElementById("math");
+				const contactBtn = document.getElementById("contactBtn");
+				math.addEventListener('blur', (event) => {
+					 console.log(math.value);
+				   if(math.value == 42){contactBtn.disabled = false;}
+					 else{contactBtn.disabled = true;}
+				});
+			}
+
+			if (isFront) {
+				loadEasyContactCaptcha();
+			}
+
+			/* Support WebP */
+			function canUseWebP() {
+		    var elem = document.createElement('canvas');
+		    if (!!(elem.getContext && elem.getContext('2d'))) {
+		        // was able or not to get WebP representation
+		        return elem.toDataURL('image/webp').indexOf('data:image/webp') == 0;
+		    }
+		    // very old browser like IE 8, canvas not supported
+		    return false;
+	   }
+		  document.documentElement.classList.add((canUseWebP() ? 'webp' : 'no-webp'));
+
+
+			/* Lazy Loading */
+			if ('loading' in HTMLImageElement.prototype) {
+				const images = document.querySelectorAll('img[loading="lazy"]');
+				images.forEach(img => {
+					img.src = img.dataset.src;
+				});
+			} else {
+				// Dynamically import the LazySizes library
+				const script = document.createElement('script');
+				script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js';
+				document.body.appendChild(script);
+			}
+
+
+
 });
