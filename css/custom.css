@@ -47,6 +47,7 @@ a:hover{
   text-align: center;
   width:100%;
   height: calc(100% + 50px);
+  background-color: #433440;
 }
 
 .no-js #header,

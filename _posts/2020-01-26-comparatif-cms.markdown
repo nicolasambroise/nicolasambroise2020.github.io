@@ -7,10 +7,8 @@ thumbnail: "cms.jpg"
 visible : true
 ---
 
-Bonjour et bienvenue sur le premier article de mon Blog, pour ce premier article j'ai choisi le thème des CMS ( Content Management System) et notament sur le fait de comment choisir un CMS pour créer son site web.
+Bonjour et bienvenue sur le premier article de cette nouvelle année 2020, pour ce premier article j'ai choisi le thème des CMS ( Content Management System) et notament sur le fait de comment choisir un CMS pour créer son site web.
 Il y a de nombreux CMS qui existe sur le marché, certain nécessite une Base de données, d'autre nécessite des connaissances en programmation et d'autres ont des orientations particulières (blogging, evenementiel, e-commerce)
-
-![All CMS](/img/illustration/all_cms.png)
 
 Ci dessus est une liste non-exhaustive des CMS qui existe, je vais vous donner un petit feedback des CMS qui j'ai déjà dû utiliser dans ma carrière de Développeur Frontend.
 
@@ -60,3 +58,5 @@ Les nouveaux venu dans la sphère des CMS qui offre une nouvelle alternative au 
 Il n'y a pas de CMS mieux que les autres, il faut voir en fonction du nombre d'utilisateur, des type de contenu, des fonctionnalité désirées pour choisir au mieux sont CMS (et en fonction de son niveau en informatique)
 
 J'ai passé de 2008 à 2011 sur Wordpress, puis je me suis interessé à Drupal car c'était la solution la plus demandée par les entreprises. En ce début d'année 2020, j'ai suivi plusieurs tutoraux sur solution Jekyll (sponsorisé par Github) dans le but de refondre mon site Drupal 8 en quelque chose de beaucoup plus leger, de plus rapide et de beaucoup plus maintenable. Comme je suis le seul auteur, et que je rédige que peu d'article, chaque mois je passais plus de temps à mettre à jour le site Drupal 8 via composer qu'à rédiger les articles. Jekyll est très interressant car il n'y a plus d'interface administration, tout est géré avec quelques lignes de commandes et la syntaxe me rappelle étrangement de l'angular/mustashe.
+
+Une fois que j'aurai fini de faire le tour de Jekyll, je souhaite me former sur AEM (Adobe Experience Manager) dans lequel je détect un fort potentiel.

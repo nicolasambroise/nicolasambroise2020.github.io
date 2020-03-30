@@ -215,3 +215,5 @@ Une autre solution serait de charger le reste du site en Ajax pour réduire enco
  <br>
 ### En resumé
 Il y a plein de chose à faire pour réduire le nombre de bits téléchargé au début du chargement. Dans mon exemple, je passe de 41 requetes pour une total d'environ 605.5KB à 20 requetes pour un total de 377.6KB. On visualise mieux le résultat ainsi : on passe de 3.4s (+2.5s pour le full download) de chargement à 0.9s de temps de chargement.
+Pour aller encore un peu plus loin, on peu s'interessé à la notion d'HTTP2 donc je vous mets le lien ci-dessous
+- [démo HTTP2](http://http2.golang.org/gophertiles?latency=0)

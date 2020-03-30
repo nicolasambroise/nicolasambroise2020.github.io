@@ -1,11 +1,12 @@
 {
 	"name": "Nicolas AMBROISE - Developpeur Web Luxembourg",
 	"short_name": "N. AMBROISE",
+  "description": "Nicolas AMBROISE Website",
 	"theme_color": "#DE3712",
 	"background_color": "#433440",
 	"display": "standalone",
 	"scope": "/",
-	"start_url": "https://nicolasambroise.com/",
+	"start_url": "./",
 	"lang": "fr-FR",
 	"orientation": "any",
   "icons": [

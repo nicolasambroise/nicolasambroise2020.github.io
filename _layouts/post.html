@@ -9,11 +9,18 @@
 
   <section>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-10 col-lg-offset-1 borderbox">
-                <h1>{{ page.title }}</h1>
-                <p>{{ page.date | date_to_string }} - Nicolas AMBROISE</p>
-								{{ content }}
+        <div class="row borderbox">
+            <div class="col-lg-10 col-lg-offset-1">
+              <div class="col-md-3">
+                  <img src="/img/thumbnail/{{ page.thumbnail }}" style="width:100%;max-width:400px;">
+              </div>
+              <div class="col-md-9">
+                  <h1>{{ page.title }}</h1>
+                  <p>{{ page.date | date_to_string }} - Nicolas AMBROISE</p>
+              </div>
+              <div class="col-md-12" style="margin-top:25px;">
+                {{ content }}
+              </div>
             </div>
           </div>
         </div>

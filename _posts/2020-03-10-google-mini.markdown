@@ -8,8 +8,6 @@ visible : true
 ---
 Connaissant mon attrait pour la domotique, ma femme m'a offert noel dernier une google mini. Cela fait mainteant un peu plus d'un an que je l'utilise et j'ai de plus en plus d'objets connectés qui y sont liés. Je vais vous faire une liste de ce que j'ai installé à la maison et la raison de mes choix.
 
-![Google Mini picture](/img/thumbnail/gmini.jpg)
-
 1. Tout d'abord, les **Google mini**, j'en ai 2, une dans la cuisine au rez-de-chaussé et l'autre dans notre chambre à l'étage. Cela me permet de pouvoir écouter de la musique et avoir accès à l'assistant vocal partout dans la maison. J'ai bien en tête d'en prendre une pour le garage, une seconde pour le salon situé au rdc et une pour la chambre de ma fille. L'utilité d'en avoir plusieurs, c'est qu'il n'y a pas nécéssité d'élever la voix pour ce faire entendre et qu'on peut lancer la musique sur un groupe d'enceinte pour avoir la musique dans toute la maison. Pourquoi j'ai pris la google mini plutôt que les autres enceinte de la gamme, tout simplement à cause du prix (entre 25€ et 30€ sur des sites de petite annonce) et que je n'entend pas beaucoup de différence au niveau du son avec la Google home classique.
 J'utilise beaucoup de commandes vocales dont voici les plus utilisées :
 - Ok Google, joue la playlist Disney sur spotify
@@ -45,4 +43,4 @@ J'ai créé des scénarii sur _Smart Life_ afin qu'au moindre passage dans le co
 
 Voici ce qui conclu mes 1 an d'achat et d'interêt dans le domaine de la domotique. Pendant plusieurs mois, j'ai également été trés actif sur les groupes Facebook lié à google Home.
 Je me suis aussi interessé à la création d'Actions avec la Google home, les bases sont assez faciles à prendre en mains. Je vous conseille le tuto suivant pour apprendre à faire une conversation simple :
-[Codelabs Google]: https://codelabs.developers.google.com/codelabs/actions-1/#0
+[Codelabs Google](https://codelabs.developers.google.com/codelabs/actions-1/#0)

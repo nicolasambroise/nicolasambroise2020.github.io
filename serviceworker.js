@@ -1,6 +1,4 @@
-const CACHE = "NIA-offline";
-const VERSION = "0.1"
-
+const CACHE = "NIA-offline-v0.1";
 
 self.addEventListener("install", function(event) {
   event.waitUntil(preLoad());
@@ -15,7 +13,6 @@ var preLoad = function(){
         '/',
         '/js/custom.min.js',
         '/js/manup.min.js',
-        '/js/modernizr.min.js',
         '/js/sw.min.js',
         '/css/critical.min.css',
         '/css/custom.min.css',
@@ -77,7 +74,7 @@ var addToCache = function(request){
   return caches.open(CACHE).then(function (cache) {
     return fetch(request).then(function (response) {
       console.log(response.url + " was cached");
-      return caches.open(VERSION)
+      return caches.open(CACHE)
             .then(function (cache) {
                 // here be the fix
                 if (!/^https?:$/i.test(new URL(request.url).protocol)) return;

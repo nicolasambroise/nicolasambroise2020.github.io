@@ -1,0 +1,236 @@
+---
+layout: post
+title:  "Progressive Web App : Le pouvoir du Cache"
+date:   2020-03-30 06:47:34 +0100
+categories: lighthouse
+thumbnail: "chromegame.png"
+visible : true
+---
+
+Pour faire suite à l'article sur [l'optimisation des performance](/lighthouse/optimisation-web.html), je vous propose de plonger dans la gestion du cache. Qui n'a jamais été confronté à une erreur lors d'un passage sous un tunnel ou dans un ascenseur. Comment font les sites comme Facebook ou Google pour vous donner accès à vos derniers mails, ou aux derniers articles alors que vous êtes en mode avion?
+
+La notion de PWA (pour Progressive Web App) est d'après moi un des 5 axes d'optimisations d'un site.
+- Optimisation des performances
+- Mise en place d'un référencement naturelle (SEO)
+- Rendre l'application disponible hors-ligne (PWA)
+- Améliorer l'affichage et l'accessibilité (Responsive + UI/UX)
+- Augmenter la sécurité de votre site
+
+Par où commencer me diriez vous ?
+Avant de rentrer dans la logique du cache et de la notion de service Worker, nous allons commencer en douceur avec la notion de manifest.json.
+
+### 1) Le fichier Manifest
+
+
+Ce fichier est appelé dans la balise <head> du site
+{% highlight html %}
+<head>
+  ...
+  <link rel="manifest" href="/manifest.json">
+  ...
+</head>
+{% endhighlight %}
+
+Voici à quoi ressemble celui de ce site :
+{% highlight json %}
+{
+	"name": "Nicolas AMBROISE - Developpeur Web Luxembourg",
+	"short_name": "N. AMBROISE",
+  "description": "Nicolas AMBROISE Website",
+	"theme_color": "#DE3712",
+	"background_color": "#433440",
+	"display": "standalone",
+	"scope": "/",
+	"start_url": "./",
+	"lang": "fr-FR",
+	"orientation": "any",
+  "icons": [
+    {
+     "src": "\/img\/favicon\/android-icon-36x36.png",
+     "sizes": "36x36",
+     "type": "image\/png",
+     "density": "0.75"
+    },
+    {
+     "src": "\/img\/favicon\/android-icon-48x48.png",
+     "sizes": "48x48",
+     "type": "image\/png",
+     "density": "1.0"
+    },
+    {
+     "src": "\/img\/favicon\/android-icon-72x72.png",
+     "sizes": "72x72",
+     "type": "image\/png",
+     "density": "1.5"
+    },
+    {
+     "src": "\/img\/favicon\/android-icon-96x96.png",
+     "sizes": "96x96",
+     "type": "image\/png",
+     "density": "2.0"
+    },
+    {
+     "src": "\/img\/favicon\/android-icon-144x144.png",
+     "sizes": "144x144",
+     "type": "image\/png",
+     "density": "3.0"
+    },
+    {
+     "src": "\/img\/favicon\/android-icon-192x192.png",
+     "sizes": "192x192",
+     "type": "image\/png",
+     "density": "4.0"
+    }
+   ]
+}
+{% endhighlight %}
+
+
+Ce fichier ne pose normalement pas de problème et il est facilement compréhensible. Lors de l'édition, il faut juste faire attention à mettre moins de 12 caractères pour le "short_name" afin de ne pas avoir de problème d'affichage sur mobile.
+
+### 2) Le Concept du Service Worker
+
+Le Service Worker c'est un petit bout de code qui va s'immisé entre le moment ou la page est appelé et le moment ou les ressources sont téléchargées. Il va pouvoir dire quelles ressources proposer à l'utilisateur (celles en cache, celles qui vont être téléchargées), il va pouvoir gérer quelles données on va stocker dans le cache, et à quels moment on update celle ci.
+
+### 3) L'appel du ServiceWorker
+
+A la fin de la balise <body> du site web, il suffit d'ajouter le script suivant afin d'enregistrer le ServiceWorker.
+Dans mon site le fichier "serviceworker.js" se situe à la racine de mon site.
+
+{% highlight js %}
+<script>
+/* Services Worker */
+if ("serviceWorker" in navigator) {
+  if (navigator.serviceWorker.controller) {
+    console.log("An active service worker found, no need to register");
+  } else {
+     navigator.serviceWorker.register("/serviceworker.js").then(function(reg) {
+         console.log("Service worker has been registered for scope: " + reg.scope);
+     }
+   }
+ }
+ </script>
+ {% endhighlight %}
+
+Il est possible de faire plus de traitement à ce niveau, comme par exemple le suivi de l'installation ou la detection des updates.
+
+### 4) Le fichier ServiceWorker
+
+Pour expliquer ce fichier, le plus simple est de le scrinder en 2 parties
+
+Dans la première partie, il s'agit de choisir un nom de cache (je vous conseil d'y ajouter un numéro de version ou une date)
+Ensuite il y a une fonction pour l'installation, et une fonction pour la mise en cache. On peut explicité les URL de tout les fichiers appelés (CSS/JS/HTML/Font/Images).
+
+{% highlight js %}
+const CACHE = "NIA-offline-v0.1";
+
+self.addEventListener("install", function(event) {
+  event.waitUntil(preLoad());
+});
+
+var preLoad = function(){
+  console.log("Installing web app");
+  return caches.open(CACHE).then(function(cache) {
+    console.log("caching index and important routes");
+
+    return cache.addAll([
+        '/',
+        ...  <-- Mettre ici les URL de tout les fichiers appelés (CSS/JS/HTML/Font/Images)
+      ]);
+  });
+};
+{% endhighlight %}
+
+La seconde partie est appelée lors du chargement d'une page afin de vérifier si la ressource demandée existe dans le cache et la proposer au lieu de la télécharger cette ressource depuis internet. Si la ressource n'est pas présente dans le cache, on l'ajoute à celui-ci.
+Il suffit de copier-coller le script ci-dessous à la suite de votre serviceworker.js à la racine de votre site.
+
+{% highlight js %}
+// If any fetch fails, it will look for the request in the cache and serve it from there first
+self.addEventListener("fetch", function(event) {
+  if (event.request.method !== "GET") return;
+  event.respondWith(
+    checkResponse(event.request).catch(function() {
+      return returnFromCache(event.request);
+    }));
+  event.waitUntil(addToCache(event.request));
+});
+
+var checkResponse = function(request){
+  return new Promise(function(fulfill, reject) {
+    fetch(request).then(function(response){
+      if(response.status !== 404) {
+        fulfill(response);
+      } else {
+        reject();
+      }
+    }, reject);
+  });
+};
+
+var addToCache = function(request){
+  return caches.open(CACHE).then(function (cache) {
+    return fetch(request).then(function (response) {
+      console.log(response.url + " was cached");
+      return caches.open(CACHE)
+            .then(function (cache) {
+                // here be the fix
+                if (!/^https?:$/i.test(new URL(request.url).protocol)) return;
+                cache.put(request, response);
+            });
+      //return cache.put(request, response);
+    });
+  });
+};
+
+var returnFromCache = function(request){
+  return caches.open(CACHE).then(function (cache) {
+    return cache.match(request).then(function (matching) {
+     if(!matching || matching.status == 404) {
+       return cache.match("offline.html");
+     } else {
+       return matching;
+     }
+    });
+  });
+};
+
+{% endhighlight %}
+
+
+### 5) Test du service worker
+
+L'objectif du service worker et double : d'une part rendre le site plus rapide à charger dans le cas ou le contenu est déjà dans le cache; et d'autre part rendre votre site disponible hors ligne.
+
+Pour le tester il suffit de procéder au check suivant :
+1. Dans l'inspecteur de chrome > Onglet "Application" > Manifest, vérifier que les informations sont exactes et qu'il n'y a pas d'erreur mentionnée
+2. Dans l'inspecteur de chrome > Onglet "Application" > Service Worker, vérifier que le Service Worker est bien listé et que son status est bien en activé.
+3. Dans l'inspecteur de chrome > Onglet "Application" > Cache > Cache Storage, vérifié qu'il y a bien un Cache qui porte le nom que vous lui avait donné et que l'intégralité des données voulues sont dedans.
+4. Dans l'inspecteur de chrome > Onglet "Application" > Service Worker, cocher la case "Offline"
+
+### Pour finir
+
+Avec la mise en cache PWA, votre site est maintenant beaucoup plus rapide à charger pour les "returning visitor" et il est également disponible hors-ligne.
+Pour un site avec des mise à jour très fréquentes (mail, tchat, actualités), il peut être interessant d'avoir 2 caches distinct, un pour le contenu static et l'autre pour les derniers contenus (Par exemple les 10 derniers articles).
+Le comportement sera alors d'afficher les 10 articles du caches par défaut, et dès le promise reçu, il suffit de mettre à jour la liste des articles affichés et de les stocker dans le cache.
+Le Concept de PWA est encore un concept naissant pas appliqué partout. Des modules PWA commance à voir le jour sur les CMS comme Wordpress ou Drupal, mais pour les avoir testé, ils ne sont pas
+
+### links
+<br>Generalité
+- [PWA Mozilla.org](https://developer.mozilla.org/fr/docs/Web/Progressive_web_apps)
+- [Guide PWA](https://scotch.io/tutorials/the-ultimate-guide-to-progressive-web-applications)
+
+<br>Manifest
+- [PWA wap app manifest](https://medium.com/@guillaumeandre/progressive-web-app-pwa-fichier-web-app-manifest-7292db378af5)
+- [How add manifest](https://web.dev/add-manifest/#splash-screen)
+
+<br>CMS
+- [CMS work offline](https://www.freecodecamp.org/news/how-i-made-my-cms-based-website-work-offline-f34afc393ca8/?gi=eda028592423)
+- [Drupal project PWA](https://www.drupal.org/project/pwa)
+
+<br>Workbox
+- [Workbox tools](https://developers.google.com/web/tools/workbox)
+- [IndexedDB monitoring with Workbox](https://codelabs.developers.google.com/codelabs/workbox-indexeddb/index.html)
+
+<br>Angular
+- [Use PWA with Angular](https://angular.io/guide/service-worker-getting-started)
+- [PWA with Angular and SpringBoot](https://developer.okta.com/blog/2017/05/09/progressive-web-applications-with-angular-and-spring-boot)
