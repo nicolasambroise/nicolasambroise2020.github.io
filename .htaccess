@@ -89,9 +89,7 @@ AddDefaultCharset utf-8
 
 <IfModule mod_rewrite.c>
     Options +FollowSymlinks
-  # Options +SymLinksIfOwnerMatch
     RewriteEngine On
-  # RewriteBase /
 </IfModule>
 
 <IfModule mod_rewrite.c>
@@ -120,10 +118,10 @@ AddDefaultCharset utf-8
     Satisfy All
 </FilesMatch>
 
-<files .htaccess>
-    Order allow,deny
-    Deny from all
-</files>
+#<files .htaccess>
+#    Order allow,deny
+#    Deny from all
+#</files>
 
 # ##############################################################################
 # # WEB PERFORMANCE                                                            #

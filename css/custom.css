@@ -9,16 +9,16 @@
     url("../fonts/Montserrat-Regular.woff2") format("woff2"); /* Modern Browsers */
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
-@font-face{font-family:"Font Awesome 5 Brands";font-style:normal;font-weight:400;font-display:auto;src:url(../fontawesome/webfonts/fa-brands-400.eot);src:url(../fontawesome/webfonts/fa-brands-400.eot?#iefix) format("embedded-opentype"),url(../fontawesome/webfonts/fa-brands-400.woff2) format("woff2"),url(../fontawesome/webfonts/fa-brands-400.woff) format("woff"),url(../fontawesome/webfonts/fa-brands-400.ttf) format("truetype"),url(../fontawesome/webfonts/fa-brands-400.svg#fontawesome) format("svg");font-display: fallback;}.fab{font-family:"Font Awesome 5 Brands";font-weight:400}
-@font-face{font-family:"Font Awesome 5 Free";font-style:normal;font-weight:900;font-display:auto;src:url(../fontawesome/webfonts/fa-solid-900.eot);src:url(../fontawesome/webfonts/fa-solid-900.eot?#iefix) format("embedded-opentype"),url(../fontawesome/webfonts/fa-solid-900.woff2) format("woff2"),url(../fontawesome/webfonts/fa-solid-900.woff) format("woff"),url(../fontawesome/webfonts/fa-solid-900.ttf) format("truetype"),url(../fontawesome/webfonts/fa-solid-900.svg#fontawesome) format("svg");font-display: fallback;}.fa,.fas{font-family:"Font Awesome 5 Free";font-weight:900}
+@font-face{font-family:"Font Awesome 5 Brands";font-style:normal;font-weight:400;font-display:swap;src:url(../fontawesome/webfonts/fa-brands-400.eot);src:url(../fontawesome/webfonts/fa-brands-400.eot?#iefix) format("embedded-opentype"),url(../fontawesome/webfonts/fa-brands-400.woff2) format("woff2"),url(../fontawesome/webfonts/fa-brands-400.woff) format("woff"),url(../fontawesome/webfonts/fa-brands-400.ttf) format("truetype"),url(../fontawesome/webfonts/fa-brands-400.svg#fontawesome) format("svg");font-display: fallback;}.fab{font-family:"Font Awesome 5 Brands";font-weight:400}
+@font-face{font-family:"Font Awesome 5 Free";font-style:normal;font-weight:900;font-display:swap;src:url(../fontawesome/webfonts/fa-solid-900.eot);src:url(../fontawesome/webfonts/fa-solid-900.eot?#iefix) format("embedded-opentype"),url(../fontawesome/webfonts/fa-solid-900.woff2) format("woff2"),url(../fontawesome/webfonts/fa-solid-900.woff) format("woff"),url(../fontawesome/webfonts/fa-solid-900.ttf) format("truetype"),url(../fontawesome/webfonts/fa-solid-900.svg#fontawesome) format("svg");font-display: fallback;}.fa,.fas{font-family:"Font Awesome 5 Free";font-weight:900}
 
 body {
     background-color: #f9f7f1;
     font-family: 'Montserrat', sans-serif;
     -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased;
     font-size: 14px;
     color: #545454;
     font-weight: 400;
@@ -77,18 +77,18 @@ a:hover{
             font-size: 65px;
 }
 
-@media screen and (max-width: 767px)
+@media screen and (max-width: 767px){
 #header {
     padding: 3em 0 7em 0;
-}
-@media screen and (max-width: 1280px)
+}}
+@media screen and (max-width: 1280px){
 #header {
     padding: 6em 0 12em 0;
-}
-@media screen and (max-width: 1680px)
+}}
+@media screen and (max-width: 1680px){
 #header {
     padding: 8em 0 16em 0;
-}
+}}
 
 #header .divider-wrap{
   position: absolute;
@@ -602,7 +602,7 @@ label {
 
   .container .borderbox{
         box-shadow: none;
-        padding: 10px;
+        padding: 15px;
         background-color: unset;
   }
   #certif .borderbox,

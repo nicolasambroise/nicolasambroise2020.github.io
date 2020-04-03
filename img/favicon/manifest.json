@@ -6,7 +6,7 @@
 	"background_color": "#433440",
 	"display": "standalone",
 	"scope": "/",
-	"start_url": "./",
+	"start_url": "https://nicolasambroise.github.io",
 	"lang": "fr-FR",
 	"orientation": "any",
   "icons": [
@@ -45,6 +45,12 @@
      "sizes": "192x192",
      "type": "image\/png",
      "density": "4.0"
-    }
+    },
+    {
+      "src": "\/img\/favicon\/android-icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image\/png",
+      "density": "5.0"
+     }
    ]
 }
