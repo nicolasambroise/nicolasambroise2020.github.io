@@ -73,14 +73,15 @@ var checkResponse = function(request){
 var addToCache = function(request){
   return caches.open(CACHE).then(function (cache) {
     return fetch(request).then(function (response) {
-      console.log(response.url + " was cached");
-      return caches.open(CACHE)
+      if(response.url != null){
+          console.log(response.url + " was cached");
+          return caches.open(CACHE)
             .then(function (cache) {
                 // here be the fix
                 if (!/^https?:$/i.test(new URL(request.url).protocol)) return;
                 cache.put(request, response);
             });
-      //return cache.put(request, response);
+          }
     });
   });
 };

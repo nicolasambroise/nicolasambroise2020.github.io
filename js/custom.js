@@ -104,10 +104,11 @@ document.addEventListener("DOMContentLoaded", function() {
 			const loadEasyContactCaptcha = ( ) => {
 				const math = document.getElementById("math");
 				const contactBtn = document.getElementById("contactBtn");
-				math.addEventListener('blur', (event) => {
-					 console.log(math.value);
-				   if(math.value == 42){contactBtn.disabled = false;}
-					 else{contactBtn.disabled = true;}
+				math.addEventListener('keyup', (event) => {
+					if (event.isComposing || event.keyCode === 229) {return;}
+					console.log(math.value);
+				    if(math.value == 42){contactBtn.disabled = false;}
+					else{contactBtn.disabled = true;}
 				});
 			}
 
