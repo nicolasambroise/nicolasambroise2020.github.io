@@ -13,7 +13,7 @@ La notion de PWA (pour Progressive Web App) est d'après moi un des 5 axes d'opt
 - Optimisation des performances
 - Mise en place d'un référencement naturelle (SEO)
 - Rendre l'application disponible hors-ligne (PWA)
-- Améliorer l'affichage et l'accessibilité (Responsive + UI/UX)
+- Améliorer l'affichage et l'accessibilité
 - Augmenter la sécurité de votre site
 
 Par où commencer me diriez vous ?

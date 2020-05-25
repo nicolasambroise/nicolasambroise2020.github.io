@@ -27,9 +27,11 @@
                 <li>
                     <a class="page-scroll" href="#certif">Certif.</a>
                 </li>
-                <li>
-                    <a class="page-scroll" href="#project">Blog</a>
-                </li>
+                    {% if site.display_blog %}
+                    <li>
+                        <a class="page-scroll" href="#project">Blog</a>
+                    </li>
+                    {% endif %}
                 <li>
                     <a class="page-scroll" href="#contact">Contact</a>
                 </li>
@@ -37,9 +39,11 @@
                 <li>
                     <a href="/">Home</a>
                 </li>
-                <li {% if page.url == "/blog.html" %}class="active"{% endif %}>
-                    <a href="/blog.html">Blog</a>
-                </li>
+                    {% if site.display_blog %}
+                    <li {% if page.url == "/blog.html" %}class="active"{% endif %}>
+                        <a href="/blog.html">Blog</a>
+                    </li>
+                    {% endif %}
                 <li  {% if page.url == "/contact.html" %}class="active"{% endif %}>
                     <a href="/contact.html">Contact</a>
                 </li>

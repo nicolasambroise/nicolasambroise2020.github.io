@@ -144,6 +144,9 @@ voici déjà un état intermédiaire lors de l'utilisation de Coverage
 <br />
 ### 7) Voir si on peut concaténer certain fichiers afin de réduire le nombre d'appel.<br />
 Comme signalé en introduction de la partie performance, plus il y a de fichier et plus ceux-ci sont volumineux et plus le site va mettre de temps à tout récupérer et traiter. Une bonne idée peut-être de concaténer les fichiers CSS qui se charge en même temps au sein d'un même fichier. De même pour le JS. Je vous recommanderai de toujours avoir un fichier critical.css qui contient uniquement le style minimum pour que votre site renvoi un rendu agréable. Celui la ne doit pas être inclu dans le fichier concaténé.
+Générer le CSS critique automatiquement : [critical path]
+(https://jonassebastianohlsson.com/criticalpathcssgenerator/)
+
 <br />
 ### 8) Voir si on peut ajouter un délais au chargement du JS/CSS afin de ne pas bloquer le chargement initial de la page.<br />
 Dans un premier temps il faut déplacer un maximum de JS en bas de la page afin de les faire charger après le html.

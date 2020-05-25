@@ -1,0 +1,20 @@
+---
+layout: post
+title: "How to use the HTML5 tag Video?"
+date:   2019-10-19 18:29:18 +0100
+categories: html5
+thumbnail: "videohtml.png"
+visible : false
+---
+
+<html><body>
+<video width="720" height="405" controls="" poster="https://www.amisdesmusees.lu/sites/default/files/videos/ADM_Cover_Video_1.png"><source src="C:\Users\nambroise\Downloads/podcast03_romain.mp4" type="video/mp4"><source src="C:\Users\nambroise\Downloads/podcast03_romain.ogg" type="video/ogg">
+	Your browser does not support the video tag or the file format of this video. <a href="http://www.supportduweb.com/">http://www.supportduweb.com/</a>
+</video>
+</body>
+</html>
+
+
+<center>
+<video controls="" height="405" poster="/sites/default/files/inline-images/Banner_DAC6Connect_2020.jpg" width="720"><source src="/sites/default/files/media/video/podcast03_romain.mov" type="video/mp4" /> <source src="/sites/default/files/media/video/podcast03_romain.mp4" type="video/mp4" /><source src="/sites/default/files/media/video/podcast03_romain.ogg" type="video/ogg" /> <source src="/sites/default/files/media/video/podcast03_romain.webm" type="video/webm" /> Your browser does not support the video tag or the file format of this video. <a href="http://www.supportduweb.com/">http://www.supportduweb.com/</a></video>
+</center>

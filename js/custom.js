@@ -54,12 +54,18 @@ document.addEventListener("DOMContentLoaded", function() {
 	  const add_class_on_scroll = () => {header.classList.add("affix");header.classList.remove("affix-top");}
 	  const remove_class_on_scroll = () => {header.classList.remove("affix");header.classList.add("affix-top");}
 
+		if(!isFront){
+			add_class_on_scroll();
+		}
+
 	  window.addEventListener('scroll', function() {
 	    scrollpos = window.scrollY;
-
-	    if (scrollpos >= header_height) { add_class_on_scroll() }
-	    else { remove_class_on_scroll() }
-		});
+		if(isFront){
+	    	if (scrollpos >= header_height) { add_class_on_scroll(); }
+	    	else { remove_class_on_scroll(); }
+		}
+	});
+		
 
 		const navBtn = document.querySelector("button.navbar-toggle");
 		const navCollapse = document.querySelector("div.navbar-collapse");

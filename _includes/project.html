@@ -22,9 +22,11 @@
                     </div>
                   </div>
                 </div>
-                <div class="row" style="margin-top:50px;">
-                      {% include articles.html %}
-                </div>
+                {% if site.display_blog %}
+                  <div class="row" style="margin-top:50px;">
+                        {% include articles.html %}
+                  </div>
+                {% endif %}
         </div>
     </div>
 </section>
